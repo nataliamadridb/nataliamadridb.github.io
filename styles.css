@@ -45,7 +45,7 @@ body {
 }
 
 aside {
-    width: 25%;
+    width: 30%;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -58,7 +58,7 @@ aside {
 }
 
 main {
-    width: 70%;
+    width: 60%;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
