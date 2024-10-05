@@ -19,7 +19,7 @@ header {
     width: 100%; /* Make it full width */
     background-color: white; /* Background color to cover the content beneath */
     z-index: 1000; /* Keep it above other elements */
-    padding: 10px 0; /* Add padding for spacing */
+    padding: 5px 0; /* Add padding for spacing */
 }
 
 .menu-container {
