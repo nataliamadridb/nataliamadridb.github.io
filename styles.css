@@ -222,7 +222,7 @@ footer a:hover {
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     body {
-        margin: 10px 50px;
+        margin: 0 50px;
     }
 }
 
