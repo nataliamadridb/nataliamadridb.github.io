@@ -67,7 +67,8 @@ header {
 }
 
 aside {
-    width: 30%;
+    width: 100%; /* Allow it to take full width on mobile */
+    max-width: 300px; /* Optional: limit maximum width for larger screens */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -75,13 +76,18 @@ aside {
     text-align: center;
 }
 
+
 aside h3 {
     margin-top: 20px; /* Adds 20px of space between the profile picture and the name */
 }
 
 .profile-pic {
-    width: 80%;
+    width: 100%; /* Full width of the parent container */
+    max-width: 200px; /* Limit maximum width to avoid overflow */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 50%;
+    margin-top: 20px; /* Margin above the profile picture */
+    object-fit: cover; /* Ensure the image covers the element without distortion */
 }
 
 main {
