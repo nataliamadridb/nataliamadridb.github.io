@@ -26,7 +26,7 @@ header {
     width: 100%;
     background-color: #78afd3;
     color: #78afd3;
-    padding: 10px 0;
+    padding: 0 10px;
     box-shadow: 0 2px 2px #78afd3;
     z-index: 1000;
 }
