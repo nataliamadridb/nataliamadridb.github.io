@@ -115,7 +115,7 @@ main {
 }
 
 .box.research {
-    width: 35%; /* Research Interests box takes 40% of the container */
+    width: 30%; /* Research Interests box takes 40% of the container */
     padding-left: 20px;
 }
 
@@ -124,7 +124,7 @@ main {
 }
 
 .box.education {
-    width: 65%; /* Education box takes 60% of the container */
+    width: 70%; /* Education box takes 60% of the container */
     padding-left: 20px;
 }
 
