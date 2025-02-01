@@ -341,32 +341,44 @@ a[href^="mailto:"]:hover {
 .logo-and-content {
     display: flex;
     align-items: flex-start; /* Align items to the top */
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space between each teaching experience */
+    gap: 15px; /* Space between the logo and the content */
 }
 
 .logo {
-    width: 50px; /* Adjust the size as needed */
-    height: auto;
-    margin-right: 15px;
-    margin-top: 5px; /* Add some margin to shift it down or up as needed */
+    width: 50px; /* Consistent logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 5px; /* Fine-tune vertical alignment, if necessary */
 }
 
-
 .teaching-content h3 {
-    font-size: 1.0em;
+    font-size: 1.0em; /* Consistent font size for headings */
     font-weight: bold;
-    margin: 0;
+    margin: 0; /* Remove extra space */
 }
 
 .teaching-content p {
-    margin: 0;
+    margin: 0; /* Remove unnecessary margin */
+    line-height: 1.4; /* Add better readability for text */
 }
 
 .teaching-content .job-duration {
-    color: gray;
-    font-size: 0.9em;
-    margin-bottom: 5px;
+    color: gray; /* Subtle styling for the job duration */
+    font-size: 0.9em; /* Smaller font size for duration text */
+    margin-bottom: 10px; /* Add spacing below duration text */
 }
+
+.teaching-content .courses ul {
+    list-style-type: disc; /* Use bullets for course lists */
+    padding-left: 20px; /* Indent the list for better readability */
+    margin: 5px 0 0 0; /* Adjust spacing around the list */
+}
+
+.teaching-content .courses li {
+    margin-bottom: 5px; /* Space between course items */
+    line-height: 1.4; /* Improve readability */
+}
+
 
 .courses {
     margin-bottom: 15px; /* Space between sections */
