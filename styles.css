@@ -340,7 +340,7 @@ a[href^="mailto:"]:hover {
 
 .logo-and-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     margin-bottom: 20px;
 }
 
@@ -348,7 +348,9 @@ a[href^="mailto:"]:hover {
     width: 50px; /* Adjust the size as needed */
     height: auto;
     margin-right: 15px;
+    margin-top: 5px; /* Add some margin to shift it down or up as needed */
 }
+
 
 .teaching-content h3 {
     font-size: 1.0em;
