@@ -323,7 +323,6 @@ footer a:hover {
 a[href^="mailto:"] {
     color: #3498db; /* Your preferred color */
     text-decoration: none; /* Optional: remove underline */
-    font-weight: bold; /* Optional: make it bold */
 }
 
 /* Hover effect for email link */
