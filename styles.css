@@ -418,12 +418,17 @@ a[href^="mailto:"]:hover {
     margin-right: 5px; /* Adds space between the icon and the text */
 }
 
+.research-list li {
+    display: flex;
+    flex-direction: column; /* Forces title and description into a column layout */
+    align-items: flex-start; /* Aligns text properly */
+}
+
 .scholarship-description {
-    display: block; /* Forces the description to a new line */
+    display: block; /* Ensures it appears on a new line */
     font-size: 0.9em; /* Smaller font size */
     color: #555; /* Dark gray text */
-    margin-top: 3px; /* Adds spacing between the scholarship title and description */
-    width: 100%; /* Ensures full width, preventing side-by-side display */
-    word-wrap: break-word; /* Ensures text wraps properly */
+    margin-top: 3px; /* Adds a little space between title and description */
+    width: 100%; /* Prevents any side-by-side alignment issues */
 }
 
