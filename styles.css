@@ -419,9 +419,11 @@ a[href^="mailto:"]:hover {
 }
 
 .scholarship-description {
-    display: block; /* Moves the description to a new line */
-    font-size: 0.9em; /* Makes the font smaller */
+    display: block; /* Forces the description to a new line */
+    font-size: 0.9em; /* Smaller font size */
     color: #555; /* Dark gray text */
-    margin-top: 3px; /* Adds a little space between the title and description */
+    margin-top: 3px; /* Adds spacing between the scholarship title and description */
+    width: 100%; /* Ensures full width, preventing side-by-side display */
+    word-wrap: break-word; /* Ensures text wraps properly */
 }
 
