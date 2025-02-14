@@ -417,3 +417,11 @@ a[href^="mailto:"]:hover {
     color: #3498db; /* Changes the color of the medal icon */
     margin-right: 5px; /* Adds space between the icon and the text */
 }
+
+.scholarship-description {
+    display: block; /* Moves the description to a new line */
+    font-size: 0.9em; /* Makes the font smaller */
+    color: #555; /* Dark gray text */
+    margin-top: 3px; /* Adds a little space between the title and description */
+}
+
