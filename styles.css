@@ -418,17 +418,29 @@ a[href^="mailto:"]:hover {
     margin-right: 5px; /* Adds space between the icon and the text */
 }
 
-.research-list li {
+.scholarship-list {
+    list-style-type: none; /* Removes bullets */
+    padding-left: 0; /* Removes default left padding */
+}
+
+.scholarship-list li {
     display: flex;
     flex-direction: column; /* Forces title and description into a column layout */
     align-items: flex-start; /* Aligns text properly */
+    margin: 5px 0; /* Adjust spacing */
+}
+
+.scholarship-list li i {
+    color: #3498db; /* Icon color */
+    margin-right: 10px; /* Space between icon and text */
 }
 
 .scholarship-description {
-    display: block; /* Ensures it appears on a new line */
+    display: block; /* Forces it onto a new line */
     font-size: 0.9em; /* Smaller font size */
     color: #555; /* Dark gray text */
-    margin-top: 3px; /* Adds a little space between title and description */
-    width: 100%; /* Prevents any side-by-side alignment issues */
+    margin-top: 3px; /* Space between title and description */
+    width: 100%; /* Prevents alignment issues */
 }
+
 
