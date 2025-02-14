@@ -445,7 +445,7 @@ a[href^="mailto:"]:hover {
 
 
 .scholarship-description {
-    font-size: 0.9em; /* Smaller font size */
+    font-size: 0.8em; /* Smaller font size */
     color: #555; /* Dark gray text */
     margin-left: 5px; /* Indent description slightly */
     margin-top: 2px; /* Space between title and description */
