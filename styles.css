@@ -417,31 +417,39 @@ a[href^="mailto:"]:hover {
     color: #3498db; /* Changes the color of the medal icon */
     margin-right: 5px; /* Adds space between the icon and the text */
 }
-
 .scholarship-list {
-    list-style-type: none; /* Removes bullets */
-    padding-left: 0; /* Removes default left padding */
+    list-style-type: none; /* Remove bullets */
+    padding-left: 0;
 }
 
-.scholarship-list li {
+.scholarship-item {
     display: flex;
-    flex-direction: column; /* Forces title and description into a column layout */
-    align-items: flex-start; /* Aligns text properly */
-    margin: 5px 0; /* Adjust spacing */
+    align-items: flex-start; /* Align medal and text properly */
+    margin: 10px 0; /* Add space between items */
 }
 
-.scholarship-list li i {
-    color: #3498db; /* Icon color */
-    margin-right: 10px; /* Space between icon and text */
+.scholarship-item i {
+    color: #3498db; /* Medal icon color */
+    font-size: 1.2em; /* Adjust icon size */
+    margin-right: 10px; /* Space between medal and text */
+}
+
+.scholarship-content {
+    display: flex;
+    flex-direction: column; /* Stack title and description */
+}
+
+.scholarship-title {
+    font-weight: bold; /* Make scholarship title bold */
 }
 
 .scholarship-description {
-    display: block; /* Forces it onto a new line */
     font-size: 0.9em; /* Smaller font size */
     color: #555; /* Dark gray text */
-    margin-top: 3px; /* Space between title and description */
-    width: 100%; /* Prevents alignment issues */
+    margin-left: 5px; /* Indent description slightly */
+    margin-top: 2px; /* Space between title and description */
 }
+
 
 .skills-list {
     list-style-type: disc; /* Ensures bullet points */
