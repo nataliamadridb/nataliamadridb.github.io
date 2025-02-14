@@ -443,4 +443,12 @@ a[href^="mailto:"]:hover {
     width: 100%; /* Prevents alignment issues */
 }
 
+.skills-list {
+    list-style-type: disc; /* Ensures bullet points */
+    padding-left: 20px; /* Adds indentation for bullets */
+}
+
+.skills-list li {
+    margin: 5px 0; /* Adds spacing between items */
+}
 
