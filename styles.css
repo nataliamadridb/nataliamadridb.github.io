@@ -460,4 +460,19 @@ a[href^="mailto:"]:hover {
     margin: 5px 0; /* Adds spacing between items */
 }
 
+.research-section p {
+    margin-bottom: 15px;
+}
+
+.research-list.bullets {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.research-list.bullets li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
 
