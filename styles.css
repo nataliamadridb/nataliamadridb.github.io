@@ -8,41 +8,33 @@ html, body {
     height: 100%; /* Ensures the body takes full height */
 }
 
-/* ---- Variables for header height & spacing ---- */
-:root {
-    --header-h: 72px;                /* estimated header height */
-    --header-gap: clamp(8px, 2vh, 16px); /* responsive breathing room */
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: white;
     color: #333;
-    /* reserve space for fixed header */
-    padding: calc(var(--header-h) + var(--header-gap)) 10% 5%;
+    padding: 0 10% 5% 10%; /* no top padding needed with sticky header */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 header {
-    position: fixed;
+    position: sticky;       /* instead of fixed */
     top: 0;
     left: 0;
     width: 100%;
     background-color: white;
-    color: white;
-    padding: 10px 0;
-    margin: 0;
-    box-shadow: 0 2px 2px white;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.05); 
     z-index: 1000;
     font-family: 'Times New Roman', Times, serif;
+    padding: 10px 0;        /* small breathing room */
 }
 
+/* Menu bar */
 .menu-container {
     background-color: white;
-    padding: 10px;
+    padding: 0 16px;        /* only horizontal padding */
 }
 
 .menu {
@@ -68,10 +60,11 @@ header {
     text-decoration: underline;
 }
 
+/* Content area */
 .container {
     display: flex;
     justify-content: space-between;
-    margin: 20px; /* no big top margin anymore */
+    margin: 20px; /* uniform margin, no top hack needed */
     flex-grow: 1;
 }
 
@@ -80,7 +73,7 @@ aside {
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     text-align: center;
 }
 
@@ -100,7 +93,7 @@ main {
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .title__size {
@@ -114,11 +107,9 @@ main {
     margin-top: 20px;
 }
 
-/* ---- Responsive adjustments ---- */
+/* ---- Responsive tweaks ---- */
 @media (max-width: 900px) {
-    body { 
-        padding: calc(var(--header-h) + 10px) 6% 4%;
-    }
+    body { padding: 0 6% 4%; }
     .container {
         flex-direction: column;
         margin: 16px;
@@ -129,15 +120,9 @@ main {
 }
 
 @media (max-width: 600px) {
-    body {
-        padding: calc(var(--header-h) + 6px) 12px 24px;
-    }
-    .menu .links a {
-        margin: 0 6px;
-    }
-    .profile-pic {
-        width: min(80%, 320px);
-    }
+    body { padding: 0 12px 24px; }
+    .menu .links a { margin: 0 6px; }
+    .profile-pic { width: min(80%, 320px); }
 }
 
 
@@ -526,6 +511,7 @@ a[href^="mailto:"]:hover {
 .working-projects summary::-webkit-details-marker {
   display: none; /* hides default disclosure triangle in Chrome/Safari */
 }
+
 
 
 
