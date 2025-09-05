@@ -8,12 +8,19 @@ html, body {
     height: 100%; /* Ensures the body takes full height */
 }
 
+/* ---- Variables for header height & spacing ---- */
+:root {
+    --header-h: 72px;                /* estimated header height */
+    --header-gap: clamp(8px, 2vh, 16px); /* responsive breathing room */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: white;
     color: #333;
-    padding: 5% 10%; /* Adjusted left and right padding for better responsiveness */
+    /* reserve space for fixed header */
+    padding: calc(var(--header-h) + var(--header-gap)) 10% 5%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -24,20 +31,14 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white; /* Remove the # from the color */
-    color: white; /* Remove the # from the color */
-    padding: 10px 0; /* This sets padding for top and bottom, you can adjust it as needed */
-    margin: 0; /* Eliminate top and bottom margins */
-    box-shadow: 0 2px 2px white; /* Remove the # from the color */
+    background-color: white;
+    color: white;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 2px 2px white;
     z-index: 1000;
+    font-family: 'Times New Roman', Times, serif;
 }
-
-
-
-header {
-    font-family: 'Times New Roman', Times, serif; /* Change header text to Times New Roman */
-}
-
 
 .menu-container {
     background-color: white;
@@ -52,7 +53,7 @@ header {
 }
 
 .menu .name {
-    margin-left: 40px; /* Added semicolon here */
+    margin-left: 40px;
     font-size: 1.0em;
 }
 
@@ -70,38 +71,36 @@ header {
 .container {
     display: flex;
     justify-content: space-between;
-    margin: 120px 20px 20px 20px; /* top | right | bottom | left */
-    flex-grow: 1; /* Allow the container to grow */
+    margin: 20px; /* no big top margin anymore */
+    flex-grow: 1;
 }
-
 
 aside {
     width: 30%;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 aside h3 {
-    margin-top: 20px; /* Adds 20px of space between the profile picture and the name */
+    margin-top: 20px;
 }
 
 .profile-pic {
     width: 80%;
     max-width: 100%;
-    height: auto; /* Ensures the image scales properly */
+    height: auto;
     border-radius: 50%;
 }
-
 
 main {
     width: 65%;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .title__size {
@@ -114,6 +113,33 @@ main {
     justify-content: space-between;
     margin-top: 20px;
 }
+
+/* ---- Responsive adjustments ---- */
+@media (max-width: 900px) {
+    body { 
+        padding: calc(var(--header-h) + 10px) 6% 4%;
+    }
+    .container {
+        flex-direction: column;
+        margin: 16px;
+    }
+    aside, main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: calc(var(--header-h) + 6px) 12px 24px;
+    }
+    .menu .links a {
+        margin: 0 6px;
+    }
+    .profile-pic {
+        width: min(80%, 320px);
+    }
+}
+
 
 .box.research {
     width: 30%; /* Research Interests box takes 40% of the container */
@@ -500,6 +526,7 @@ a[href^="mailto:"]:hover {
 .working-projects summary::-webkit-details-marker {
   display: none; /* hides default disclosure triangle in Chrome/Safari */
 }
+
 
 
 
