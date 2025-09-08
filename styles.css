@@ -60,6 +60,32 @@ header {
     text-decoration: underline;
 }
 
+
+/* --- Section Titles --- */
+main h2, 
+.box.research h2, 
+.box.education h2 {
+    font-size: 1.2rem;   /* smaller than your current default */
+    margin-bottom: 12px; /* optional: tighter spacing */
+}
+
+/* --- Paragraph text (About me description) --- */
+main p {
+    font-size: 0.95rem;  /* smaller body text */
+    line-height: 1.5;    /* keep readability */
+}
+
+/* --- Research interests list --- */
+.research-list li {
+    font-size: 0.95rem;  /* smaller text */
+}
+
+/* --- Education details --- */
+.edu-text, .explanation {
+    font-size: 0.95rem;  /* consistent smaller text */
+}
+
+
 /* Content area */
 .container {
     display: flex;
@@ -511,6 +537,7 @@ a[href^="mailto:"]:hover {
 .working-projects summary::-webkit-details-marker {
   display: none; /* hides default disclosure triangle in Chrome/Safari */
 }
+
 
 
 
