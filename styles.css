@@ -94,6 +94,29 @@ main p {
     flex-grow: 1;
 }
 
+/* Education description (degree text) */
+.edu-text {
+    font-size: 0.95rem;  /* keep this slightly larger */
+}
+
+/* Certificate / Courses / Ranking links */
+.explanation {
+    font-size: 0.85rem;  /* smaller than degree text */
+    color: #666;         /* subtle gray */
+}
+
+.explanation a {
+    font-size: 0.85rem;  /* match parent size */
+    color: #888;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.explanation a:hover {
+    text-decoration: underline;
+}
+
+
 aside {
     width: 30%;
     padding: 20px;
@@ -537,6 +560,7 @@ a[href^="mailto:"]:hover {
 .working-projects summary::-webkit-details-marker {
   display: none; /* hides default disclosure triangle in Chrome/Safari */
 }
+
 
 
 
