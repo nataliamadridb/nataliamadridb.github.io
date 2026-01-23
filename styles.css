@@ -8,6 +8,11 @@ html, body {
     height: 100%; /* Ensures the body takes full height */
 }
 
+html {
+  font-size: 14px; /* try 14px or 13px */
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -560,6 +565,7 @@ a[href^="mailto:"]:hover {
 .working-projects summary::-webkit-details-marker {
   display: none; /* hides default disclosure triangle in Chrome/Safari */
 }
+
 
 
 
