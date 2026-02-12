@@ -1,0 +1,654 @@
+/* --- 1. VARIABLES & RESET --- */
+:root {
+    --primary-color: #3498db;
+    /* Azul principal (Enlaces y detalles) */
+    --text-color: #333;
+    /* Texto principal (Gris oscuro/Negro) */
+    --text-light: #666;
+    /* Texto secundario (Fechas, detalles) */
+    --bg-color: #f9f9f9;
+    /* Fondo general de la página */
+    --white: #ffffff;
+    /* Blanco puro para tarjetas */
+    --font-main: 'Roboto', sans-serif;
+    --max-width: 1200px;
+    /* Ancho máximo del contenido */
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+.site-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    /* Se queda fijo al bajar */
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Contenedor del menú (Idioma + Links) */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* --- Selector de Idioma (EN / ES) --- */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Espacio entre EN y ES */
+
+    /* Separación visual del resto del menú */
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #e0e0e0;
+    /* Línea divisoria sutil */
+
+    font-size: 0.9rem;
+    font-family: var(--font-main);
+}
+
+.lang-option {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 400;
+    color: #bbb;
+    /* Gris claro para el inactivo */
+    transition: color 0.3s ease;
+    font-family: inherit;
+    /* Heredar fuente Roboto */
+}
+
+/* Estilo para el idioma ACTIVO */
+.lang-option.active {
+    color: var(--text-color);
+    /* Negro/Gris oscuro */
+    font-weight: 700;
+    /* Negrita */
+    cursor: default;
+    /* No clickeable */
+    pointer-events: none;
+}
+
+.lang-option:hover {
+    color: var(--primary-color);
+    /* Azul al pasar el mouse */
+}
+
+.separator {
+    color: #ddd;
+    font-weight: 300;
+}
+
+/* --- Enlaces del Menú --- */
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+    /* Espacio entre links (Home, CV, etc.) */
+}
+
+.main-nav a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color);
+}
+
+/* --- 3. LAYOUT PRINCIPAL --- */
+.main-container {
+    display: flex;
+    gap: 40px;
+    /* Espacio entre Sidebar y Contenido Principal */
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+    /* Empuja el footer hacia abajo si hay poco contenido */
+    width: 100%;
+}
+
+/* --- 4. SIDEBAR (PERFIL) --- */
+.profile-sidebar {
+    width: 300px;
+    /* Ancho fijo */
+    flex-shrink: 0;
+}
+
+.profile-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: sticky;
+    /* Truco pro: se queda fijo al scrollear */
+    top: 90px;
+    /* Un poco más abajo del header */
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #f0f0f0;
+}
+
+.profile-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.profile-card .role {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.profile-card .uni {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.email-link {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.btn-download {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    border: 1px solid #ddd;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 5. CONTENIDO PRINCIPAL --- */
+.content-area {
+    flex-grow: 1;
+    /* Ocupa todo el espacio restante */
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    color: #2c3e50;
+}
+
+.about-section p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    /* Texto justificado para look académico */
+}
+
+/* --- 6. GRID DE INFORMACIÓN (Research & Education) --- */
+.info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    flex: 1;
+}
+
+.research-card {
+    flex-basis: 35%;
+    /* Columna izquierda más angosta */
+}
+
+.education-card {
+    flex-basis: 55%;
+    /* Columna derecha más ancha */
+}
+
+/* Listas con iconos alineados */
+.icon-list li,
+.education-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+/* Iconos (Focos y Birretes) */
+.icon-list i,
+.icon-bullet {
+    color: var(--primary-color);
+    margin-right: 12px;
+    margin-top: 5px;
+    /* Ajuste fino vertical */
+    min-width: 20px;
+    /* Evita que el icono se aplaste */
+    text-align: center;
+}
+
+.edu-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.uni-name {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.edu-links {
+    font-size: 0.85rem;
+    margin-top: 4px;
+    color: #999;
+}
+
+.edu-links a {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.edu-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--white);
+    color: var(--text-light);
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+/* --- 8. RESPONSIVE (MEDIA QUERIES) --- */
+
+/* Tablets y Laptops pequeñas (menos de 992px) */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        /* Cambia a columna vertical */
+        gap: 20px;
+    }
+
+    .profile-sidebar {
+        width: 100%;
+        /* Ocupa todo el ancho */
+        position: static;
+        /* Deja de ser sticky */
+    }
+
+    .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-grid {
+        flex-direction: column;
+        /* Cajas una debajo de otra */
+    }
+
+    .research-card,
+    .education-card {
+        flex-basis: 100%;
+    }
+}
+
+/* Móviles (menos de 600px) */
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    .brand {
+        margin-bottom: 5px;
+    }
+
+    .main-nav {
+        /* IMPORTANTE: Mantenemos 'row' para que estén lado a lado */
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* Si la pantalla es muy pequeña, los elementos bajan ordenadamente */
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .lang-switch {
+        /* Estilos para que quede pegado a "Home" */
+        width: auto;
+        /* Que ocupe solo lo necesario */
+        border-top: none;
+        /* Quitamos la línea superior que pusimos antes */
+        padding-top: 0;
+
+        /* Mantenemos la separación lateral (la barrita |) */
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid #ddd;
+
+        /* Alineación */
+        display: flex;
+        align-items: center;
+    }
+
+    .main-nav ul {
+        gap: 12px;
+        /* Espacio un poco más pequeño entre links */
+        font-size: 0.85rem;
+        /* Letra un pelín más chica para que quepa todo */
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        /* Permite que los links 'Teaching' bajen si no caben */
+        justify-content: center;
+    }
+
+    .content-area {
+        padding: 20px;
+    }
+}
+
+/* --- ESTILOS PARA LA PÁGINA DE RESEARCH (CORREGIDO) --- */
+
+/* Lista de Preguntas */
+.research-questions li {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    /* Asegura que el icono y texto se alineen */
+    align-items: flex-start;
+}
+
+.research-questions i {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    margin-top: 4px;
+    /* Ajuste óptico */
+    color: var(--primary-color);
+}
+
+/* Acordeones de Proyectos */
+.project-card {
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    /* ELIMINAMOS overflow: hidden y transition aquí para evitar cortes de texto */
+}
+
+.project-card[open] {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-color: var(--primary-color);
+}
+
+.project-card summary {
+    padding: 20px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+    border-radius: 8px;
+    /* Redondeamos el summary por si acaso */
+    transition: background-color 0.3s ease;
+}
+
+/* Truco para que las esquinas inferiores se pongan cuadradas al abrir */
+.project-card[open] summary {
+    border-bottom: 1px solid #f0f0f0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.project-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-card summary strong {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.project-card[open] summary strong {
+    color: var(--primary-color);
+}
+
+.toggle-icon {
+    color: #aaa;
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+    /* Espacio para que no se pegue al texto */
+    flex-shrink: 0;
+    /* Evita que el icono se aplaste en móviles */
+}
+
+.project-card[open] .toggle-icon {
+    transform: rotate(180deg);
+    color: var(--primary-color);
+}
+
+.project-content {
+    padding: 25px;
+    /* Más espacio para leer */
+    background-color: white;
+    color: var(--text-color);
+    line-height: 1.8;
+    /* Mejor lectura */
+    text-align: justify;
+
+    /* ASEGURAMOS que el texto se vea completo */
+    overflow: visible;
+    height: auto;
+}
+
+/* Ajuste móvil */
+@media (max-width: 600px) {
+    .project-card summary {
+        align-items: flex-start;
+    }
+
+    .toggle-icon {
+        margin-top: 5px;
+    }
+}
+
+/* --- ESTILOS PARA LA PÁGINA DE TEACHING --- */
+
+.teaching-card {
+    display: flex;
+    gap: 20px;
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.teaching-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #ddd;
+}
+
+.teaching-logo {
+    flex-shrink: 0;
+    width: 60px;
+    /* Tamaño fijo para los logos */
+    height: 60px;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.teaching-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.teaching-details {
+    flex-grow: 1;
+}
+
+.teaching-details h3 {
+    margin-bottom: 2px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.teaching-details .institution {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+.teaching-details .duration {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.doc-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.course-list {
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.course-label {
+    font-weight: 700;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.course-list ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--text-color);
+}
+
+.course-list li {
+    margin-bottom: 5px;
+}
+
+/* Ajuste móvil para Teaching */
+@media (max-width: 600px) {
+    .teaching-card {
+        flex-direction: column;
+        /* Logo arriba, texto abajo */
+        gap: 15px;
+    }
+
+    .teaching-logo {
+        width: 50px;
+        height: 50px;
+    }
+}

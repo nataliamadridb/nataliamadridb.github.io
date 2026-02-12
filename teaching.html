@@ -1,140 +1,192 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natalia Madrid | Personal Website</title>
-    
-    <!-- Import Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <meta name="description" content="Teaching experience of Natalia Madrid Becerra.">
+    <title>Teaching | Natalia Madrid Becerra</title>
 
-    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-
 <body>
-    <header>
-        <div class='menu-container'>
-            <div class='menu'>
-                <div class='name'>
-                    <h2>Natalia Madrid Becerra</h2>
-                </div>
-                <div class="links">
-                   <a href="index.html">Home</a>
-                     <a href="pdfs/CV_Natalia_Madrid_2025.pdf" target="_blank">CV</a>
-                    <a href="research.html">Research</a>
-                    <a href="teaching.html">Teaching</a>
-                </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Natalia Madrid Becerra</h1>
             </div>
+
+            <nav class="main-nav">
+                <div class="lang-switch">
+                    <button id="btn-en" class="lang-option active">EN</button>
+                    <span class="separator">/</span>
+                    <button id="btn-es" class="lang-option">ES</button>
+                </div>
+
+                <ul>
+                    <li><a href="index.html" class="lang-text" data-en="Home" data-es="Inicio">Home</a></li>
+                    <li><a href="assets/pdfs/CV_Natalia_Madrid_2025.pdf" target="_blank">CV</a></li>
+                    <li><a href="research.html" class="lang-text" data-en="Research"
+                            data-es="Investigación">Research</a></li>
+                    <li><a href="teaching.html" class="active lang-text" data-en="Teaching"
+                            data-es="Docencia">Teaching</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-  
 
-    <div class="container">
-    
-        <aside>
-           <img src="images/nmb.jpg" alt="Foto de Perfil" class="profile-pic">
-           <br>
-           <h3>Natalia Madrid Becerra</h3>
-               <p>Ph.D. student in Economics</p>
-               <p>University of California San Diego</p>
-               <p><a href="mailto:namadrid@ucsd.edu">namadrid@ucsd.edu</a>
-               <p><a href="pdfs/CV_Natalia_Madrid_2025.pdf" class="download-link" target="_blank">Download Curriculum Vitae</a>
-              
-            <br>
-            <br>
-           <div class="social-links">
-            <a href="mailto:namadrid@ucsd.edu">
-                <i class="fas fa-envelope"></i> 
-            </a>
-            <a href="https://twitter.com/nataliamadridb" target="_blank">
-                <i class="fab fa-twitter"></i> 
-            </a>
-            <a href="https://www.linkedin.com/in/natalia-madrid-becerra-886741bb/" target="_blank">
-                <i class="fab fa-linkedin"></i> 
-            </a>
-            <a href="https://github.com/natmadridb" target="_blank">
-                <i class="fab fa-github"></i> 
-            </a>
-           
-                        </div>            
+    <div class="main-container">
 
-      </aside>
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <img src="assets/images/nmb.jpg" alt="Natalia Madrid Becerra" class="profile-pic">
+                <h3>Natalia Madrid Becerra</h3>
 
-<main id="teaching">
-    <h2 class="title__size">Teaching</h2>
+                <p class="role lang-text" data-en="Ph.D. student in Economics"
+                    data-es="Estudiante de Doctorado en Economía">Ph.D. student in Economics</p>
+                <p class="uni lang-text" data-en="University of California San Diego"
+                    data-es="Universidad de California San Diego">University of California San Diego</p>
 
-    <div class="teaching-experience">
-        <div class="logo-and-content">
-            <img src="images/ucsd_logo.png" alt="UCSD Logo" class="logo">
-            <div class="teaching-content">
-                <h3>Teaching Assistant</h3>
-                <p>University of California San Diego, USA</p>
-                <p class="job-duration">October 2024 - present</p>
-                <div class="courses">
-                    <p><u><b>Courses:</b></u></p>
-                    <ul>
-                        <li>Econometrics 120A (Undergraduate) – Prof. Graham Elliott (Fall 2024)</li>
-                        <li>Finance MGT408 (MBA) – Prof. William Mullins (Winter 2025)</li>
-                        <li>Valuation in Corporate Finance MGTF407 (Master) – Prof. William Mullins (Winter 2025)</li>
-                    </ul>
+                <div class="contact-links">
+                    <a href="mailto:namadrid@ucsd.edu" class="email-link">namadrid@ucsd.edu</a>
+                    <a href="assets/pdfs/CV_Natalia_Madrid_2025.pdf" class="btn-download" target="_blank">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="lang-text" data-en="Download CV" data-es="Descargar CV">Download CV</span>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="mailto:namadrid@ucsd.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://twitter.com/nataliamadridb" target="_blank" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/natalia-madrid-becerra-886741bb/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/nataliamadridb" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
                 </div>
             </div>
-        </div>
+        </aside>
+
+        <main class="content-area">
+
+            <section class="teaching-section">
+                <h2 class="section-title lang-text" data-en="Teaching Experience" data-es="Experiencia Docente">Teaching
+                    Experience</h2>
+
+                <div class="teaching-card">
+                    <div class="teaching-logo">
+                        <img src="assets/images/ucsd_logo.png" alt="UCSD Logo">
+                    </div>
+                    <div class="teaching-details">
+                        <h3 class="lang-text" data-en="Teaching Assistant" data-es="Ayudante de Cátedra">Teaching
+                            Assistant</h3>
+                        <p class="institution lang-text" data-en="University of California San Diego, USA"
+                            data-es="Universidad de California San Diego, EE.UU.">University of California San Diego,
+                            USA</p>
+                        <p class="duration lang-text" data-en="October 2024 - Present"
+                            data-es="Octubre 2024 - Presente">October 2024 - Present</p>
+
+                        <div class="course-list">
+                            <span class="course-label lang-text" data-en="Courses:" data-es="Cursos:">Courses:</span>
+                            <ul>
+                                <li class="lang-text"
+                                    data-en="Econometrics 120A (Undergraduate) – Prof. Graham Elliott (Fall 2024)"
+                                    data-es="Econometría 120A (Pregrado) – Prof. Graham Elliott (Otoño 2024)">
+                                    Econometrics 120A (Undergraduate) – Prof. Graham Elliott (Fall 2024)
+                                </li>
+                                <li class="lang-text"
+                                    data-en="Finance MGT408 (MBA) – Prof. William Mullins (Winter 2025)"
+                                    data-es="Finanzas MGT408 (MBA) – Prof. William Mullins (Invierno 2025)">
+                                    Finance MGT408 (MBA) – Prof. William Mullins (Winter 2025)
+                                </li>
+                                <li class="lang-text"
+                                    data-en="Valuation in Corporate Finance MGTF407 (Master) – Prof. William Mullins (Winter 2025)"
+                                    data-es="Valoración en Finanzas Corporativas MGTF407 (Máster) – Prof. William Mullins (Invierno 2025)">
+                                    Valuation in Corporate Finance MGTF407 (Master) – Prof. William Mullins (Winter
+                                    2025)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="teaching-card">
+                    <div class="teaching-logo">
+                        <img src="assets/images/udec_logo.png" alt="UDEC Logo">
+                    </div>
+                    <div class="teaching-details">
+                        <h3 class="lang-text" data-en="Adjunct Lecturer" data-es="Profesor Adjunto">Adjunct Lecturer
+                        </h3>
+                        <p class="institution lang-text" data-en="Universidad de Concepción, Chile"
+                            data-es="Universidad de Concepción, Chile">Universidad de Concepción, Chile</p>
+                        <p class="duration lang-text" data-en="August 2019 - August 2021"
+                            data-es="Agosto 2019 - Agosto 2021">August 2019 - August 2021</p>
+
+                        <a href="assets/pdfs/Supporting_letter_NMB.pdf" target="_blank" class="doc-link">
+                            <i class="fas fa-file-alt"></i> <span class="lang-text" data-en="Supporting letter"
+                                data-es="Carta de recomendación">Supporting letter</span>
+                        </a>
+
+                        <div class="course-list">
+                            <span class="course-label lang-text" data-en="Courses:" data-es="Cursos:">Courses:</span>
+                            <ul>
+                                <li class="lang-text" data-en="General Accounting and Industrial Costs"
+                                    data-es="Contabilidad General y Costos Industriales">
+                                    General Accounting and Industrial Costs
+                                </li>
+                                <li class="lang-text" data-en="Economic Engineering" data-es="Ingeniería Económica">
+                                    Economic Engineering
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="teaching-card">
+                    <div class="teaching-logo">
+                        <img src="assets/images/ucsc_logo.png" alt="UCSC Logo">
+                    </div>
+                    <div class="teaching-details">
+                        <h3 class="lang-text" data-en="Adjunct Lecturer" data-es="Profesor Adjunto">Adjunct Lecturer
+                        </h3>
+                        <p class="institution lang-text"
+                            data-en="Universidad Católica de la Santísima Concepción, Chile"
+                            data-es="Universidad Católica de la Santísima Concepción, Chile">Universidad Católica de la
+                            Santísima Concepción, Chile</p>
+                        <p class="duration lang-text" data-en="April 2020 - September 2020"
+                            data-es="Abril 2020 - Septiembre 2020">April 2020 - September 2020</p>
+
+                        <div class="course-list">
+                            <span class="course-label lang-text" data-en="Courses:" data-es="Cursos:">Courses:</span>
+                            <ul>
+                                <li class="lang-text" data-en="Quality Management" data-es="Gestión de Calidad">
+                                    Quality Management
+                                </li>
+                                <li class="lang-text" data-en="Production and Maintenance"
+                                    data-es="Producción y Mantenimiento">
+                                    Production and Maintenance
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
     </div>
 
-    <div class="teaching-experience">
-        <div class="logo-and-content">
-            <img src="images/udec_logo.png" alt="UDEC Logo" class="logo">
-            <div class="teaching-content">
-                <h3>Adjunct Lecturer</h3>
-                <p>Universidad de Concepción, Chile</p>
-                <div class="job-info">
-                    <p class="job-duration">August 2019 - August 2021</p>
-                    <span class="explanation">
-                        <a href="pdfs/Supporting_letter_NMB.pdf" target="_blank">Supporting letter</a>
-                    </span>
-                </div>
-                <div class="courses">
-                    <p><u><b>Courses:</b></u> General Accounting and Industrial Costs; Economic Engineering</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <footer>
+        <p class="lang-text" data-en="&copy; 2026 Natalia Madrid. All rights reserved."
+            data-es="&copy; 2026 Natalia Madrid. Todos los derechos reservados.">&copy; 2026 Natalia Madrid. All rights
+            reserved.</p>
+    </footer>
 
-    <div class="teaching-experience">
-        <div class="logo-and-content">
-            <img src="images/ucsc_logo.png" alt="UCSC Logo" class="logo">
-            <div class="teaching-content">
-                <h3>Adjunct Lecturer</h3>
-                <p>Universidad Católica de la Santísima Concepción, Chile</p>
-                <p class="job-duration">April 2020 - September 2020</p>
-                <div class="courses">
-                    <p><u><b>Courses:</b></u> Quality Management, Production and Maintenance</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</main>
-
-
-</div>
-
-
-
-
-<footer>
-    <p>© 2024 Natalia Madrid - All rights reserved </p>
-</footer>
-
-   
-
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
