@@ -1,160 +1,158 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natalia Madrid | Personal Website</title>
-    
-    <!-- Import Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <meta name="description" content="Academic website of Natalia Madrid Becerra, Ph.D. student in Economics at UCSD.">
+    <title>Natalia Madrid | Ph.D. Student Economics</title>
 
-    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-
 <body>
-<header>
-    <div class='menu-container'>
-        <div class='menu'>
-            <div class='name'>
-                <h2>Natalia Madrid Becerra</h2>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Natalia Madrid Becerra</h1>
             </div>
-            <div class="links">
-                <a href="index.html">Home</a>
-                 <a href="pdfs/CV_Natalia_Madrid_2025.pdf" target="_blank">CV</a>
-                                <a href="research.html">Research </a>
-                                                <a href="teaching.html">Teaching</a>
 
+            <nav class="main-nav">
+                <div class="lang-switch">
+                    <button id="btn-en" class="lang-option active">EN</button>
+                    <span class="separator">/</span>
+                    <button id="btn-es" class="lang-option">ES</button>
 
-               
+                    <span class="separator" style="margin: 0 10px;">|</span>
+                    <i class="fa-solid fa-circle-half-stroke" id="theme-toggle" title="Toggle Theme"
+                        aria-label="Change color theme" style="cursor: pointer;"></i>
+                </div>
+
+                <ul>
+                    <li><a href="index.html" class="active lang-text" data-en="Home" data-es="Inicio">Home</a></li>
+                    <li><a href="assets/pdfs/CV_Natalia_Madrid_2025.pdf" target="_blank">CV</a></li>
+                    <li><a href="research.html" class="lang-text" data-en="Research"
+                            data-es="Investigación">Research</a></li>
+                    <li><a href="teaching.html" class="lang-text" data-en="Teaching" data-es="Docencia">Teaching</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <img src="assets/images/nmb.jpg" alt="Natalia Madrid Becerra" class="profile-pic">
+                <h3>Natalia Madrid Becerra</h3>
+
+                <p class="role lang-text" data-en="Ph.D. student in Economics"
+                    data-es="Estudiante de Doctorado en Economía">Ph.D. student in Economics</p>
+                <p class="uni lang-text" data-en="University of California San Diego"
+                    data-es="Universidad de California San Diego">University of California San Diego</p>
+
+                <div class="contact-links">
+                    <a href="mailto:namadrid@ucsd.edu" class="email-link">namadrid@ucsd.edu</a>
+                    <a href="assets/pdfs/CV_Natalia_Madrid_2025.pdf" class="btn-download" target="_blank">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="lang-text" data-en="Download CV" data-es="Descargar CV">Download CV</span>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="mailto:namadrid@ucsd.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://twitter.com/nataliamadridb" target="_blank" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/natalia-madrid-becerra-886741bb/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/nataliamadridb" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
             </div>
-        </div>
+        </aside>
+
+        <main class="content-area">
+
+            <section class="about-section">
+                <h2 class="section-title lang-text" data-en="About me" data-es="Sobre mí">About me</h2>
+
+                <p class="lang-text"
+                    data-en="I am a Fulbright scholar and a Ph.D. student in Economics at the University of California, San Diego. I am focused on making progress in adapting to and mitigating the impacts of climate change, using tools from macro, finance and trade."
+                    data-es="Soy becaria Fulbright y estudiante de doctorado en Economía en la Universidad de California, San Diego. Me enfoco en avanzar en la adaptación y mitigación de los impactos del cambio climático, utilizando herramientas de macroeconomía, finanzas y comercio.">
+                    I am a Fulbright scholar and a Ph.D. student in Economics at the University of California, San
+                    Diego. I am focused on making progress in adapting to and mitigating the impacts of climate change,
+                    using tools from macro, finance and trade.
+                </p>
+
+                <p class="lang-text"
+                    data-en="I have received several notable scholarships and recognitions. These include a Fulbright Scholarship—widely regarded as one of the most prestigious scholarships globally—to pursue my Ph.D. in the United States. I was honored as an Outstanding Woman Engineer by the Faculty of Engineering at the University of Concepción. Additionally, I was awarded a scholarship from the Chilean Ministry of Education to pursue my undergraduate studies, granted in recognition of my academic excellence."
+                    data-es="He recibido varias becas y reconocimientos notables. Estos incluyen una Beca Fulbright —ampliamente considerada como una de las más prestigiosas a nivel mundial— para realizar mi doctorado en Estados Unidos. Fui distinguida como Ingeniera Destacada por la Facultad de Ingeniería de la Universidad de Concepción. Además, fui galardonada con una beca del Ministerio de Educación de Chile para mis estudios de pregrado, otorgada en reconocimiento a mi excelencia académica.">
+                    I have received several notable scholarships and recognitions. These include a Fulbright
+                    Scholarship—widely regarded as one of the most prestigious scholarships globally—to pursue my Ph.D.
+                    in the United States. I was honored as an Outstanding Woman Engineer by the Faculty of Engineering
+                    at the University of Concepción. Additionally, I was awarded a scholarship from the Chilean Ministry
+                    of Education to pursue my undergraduate studies, granted in recognition of my academic excellence.
+                </p>
+            </section>
+
+            <div class="info-grid">
+                <section class="card education-card">
+                    <h2 class="section-title lang-text" data-en="Education" data-es="Educación">Education</h2>
+                    <ul class="education-list">
+                        <li class="edu-item">
+                            <i class="fas fa-graduation-cap icon-bullet"></i>
+                            <div class="edu-content">
+                                <strong class="lang-text" data-en="Ph.D. in Economics"
+                                    data-es="Doctorado en Economía">Ph.D. in Economics</strong>
+                                <span class="uni-name lang-text"
+                                    data-en="University of California San Diego, USA (2028)"
+                                    data-es="Universidad de California San Diego, EE.UU. (2028)">University of
+                                    California San Diego, USA (2028)</span>
+                            </div>
+                        </li>
+                        <li class="edu-item">
+                            <i class="fas fa-graduation-cap icon-bullet"></i>
+                            <div class="edu-content">
+                                <strong class="lang-text" data-en="Master in Financial Management"
+                                    data-es="Magíster en Dirección Financiera">Master in Financial Management</strong>
+                                <span class="uni-name lang-text" data-en="Universidad de Concepción, Chile (2019)"
+                                    data-es="Universidad de Concepción, Chile (2019)">Universidad de Concepción, Chile
+                                    (2019)</span>
+                                <div class="edu-links">
+                                    <a href="assets/pdfs/Certificate_master_NMB.pdf" target="_blank" class="lang-text"
+                                        data-en="Certificate" data-es="Certificado">Certificate</a> /
+                                    <a href="assets/pdfs/Courses_master_NMB.pdf" target="_blank" class="lang-text"
+                                        data-en="Courses" data-es="Cursos">Courses</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="edu-item">
+                            <i class="fas fa-graduation-cap icon-bullet"></i>
+                            <div class="edu-content">
+                                <strong class="lang-text" data-en="Industrial Engineering"
+                                    data-es="Ingeniería Civil Industrial">Industrial Engineering</strong>
+                                <span class="uni-name lang-text" data-en="Universidad de Concepción, Chile (2018)"
+                                    data-es="Universidad de Concepción, Chile (2018)">Universidad de Concepción, Chile
+                                    (2018)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
     </div>
-</header>
-  
 
-    <div class="container">
-    
-            <aside>
-               <img src="images/nmb.jpg" alt="Foto de Perfil" class="profile-pic">
-               <br>
-               <h3>Natalia Madrid Becerra</h3>
-               <p>Ph.D. student in Economics</p>
-               <p>University of California San Diego</p>
-               <p><a href="mailto:namadrid@ucsd.edu">namadrid@ucsd.edu</a>
-               <p><a href="pdfs/CV_Natalia_Madrid_2025.pdf" class="download-link" target="_blank">Download Curriculum Vitae</a>
-              
-                <br>
-                <br>
-               <div class="social-links">
-                <a href="mailto:namadrid@ucsd.edu">
-                    <i class="fas fa-envelope"></i> 
-                </a>
-                <a href="https://twitter.com/nataliamadridb" target="_blank">
-                    <i class="fab fa-twitter"></i> 
-                </a>
-                <a href="https://www.linkedin.com/in/natalia-madrid-becerra-886741bb/" target="_blank">
-                    <i class="fab fa-linkedin"></i> 
-                </a>
-                <a href="https://github.com/natmadridb" target="_blank">
-                    <i class="fab fa-github"></i> 
-                </a>
-               
-                            </div>            
+    <footer>
+        <p class="lang-text" data-en="&copy; 2026 Natalia Madrid. All rights reserved."
+            data-es="&copy; 2026 Natalia Madrid. Todos los derechos reservados.">&copy; 2026 Natalia Madrid. All rights
+            reserved.</p>
+    </footer>
 
-          </aside>
-
-<main id="home">
-    <h2 class="title__size">About me</h2>
-    <p>
-
-I am a Fulbright scholar and a Ph.D. student in Economics at the University of California, San Diego. I am focused on making progress in adapting to and mitigating the impacts of climate change, using tools from macro, finance and trade. 
-</p>
-     <br>
-     <p>
-I have received several notable scholarships and recognitions. These include a Fulbright Scholarship—widely regarded as one of the most prestigious scholarships globally—to pursue my Ph.D. in the United States. I was honored as an Outstanding Woman Engineer by the Faculty of Engineering at the University of Concepción. Additionally, I was awarded a scholarship from the Chilean Ministry of Education to pursue my undergraduate studies, granted in recognition of my academic excellence.
-
-</p>
-     <br>
-       
-        
-    <div class="container-box">
-        <div class="box research">
-            <h2>Research Interests</h2>
-            <ul class="research-list">
-                <li class="box--padding"><i class="fa-solid fa-lightbulb"></i> Climate Finance </li>
-                <li class="box--padding"><i class="fa-solid fa-lightbulb"></i> Carbon Pricing </li>
-                                <li class="box--padding"><i class="fa-solid fa-lightbulb"></i> Energy Transition </li>
-
-            </ul>
-        </div>
-    
-        <div class="box education">
-            <h2>Education</h2>
-            <ul>
-                <li class="box--padding">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="edu-details">
-                        <span class="edu-text">Ph.D. in Economics - University of California San Diego, USA (2028)</span>
-                    </div>
-                </li>
-                <li class="box--padding">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="edu-details">
-                        <span class="edu-text">Master in Financial Management - Universidad de Concepción, Chile (2019)</span>
-                       <span class="explanation"> 
-                        <a href="pdfs/Certificate_master_NMB.pdf" target="_blank">Certificate</a> / 
-                        <a href="pdfs/Courses_master_NMB.pdf" target="_blank">Courses</a> / 
-                        <a href="pdfs/Ranking_master_NMB.pdf" target="_blank">Ranking</a>
-                    </span>
-                    </div>
-                </li>
-                <li class="box--padding">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="edu-details">
-                        <span class="edu-text">Industrial Engineering - Universidad de Concepción, Chile (2018)</span>
-                        <span class="explanation">
-                        <a href="pdfs/Certificate_engineer_NMB.pdf" target="_blank">Certificate</a> / 
-                        <a href="pdfs/Courses_engineer_NMB.pdf" target="_blank">Courses</a> / 
-                        <a href="pdfs/Ranking_engineer_NMB.pdf" target="_blank">Ranking</a>
-                        </span>
-                    </div>
-                </li>
-                <li class="box--padding">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="edu-details">
-                        <span class="edu-text">Bachelor of Engineering Sciences - Universidad de Concepción, Chile (2016)</span>
-                        <span class="explanation">
-                            <a href="pdfs/Certificate_bachelor_NMB.pdf" target="_blank">Certificate</a>  
-                            </span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</main>
-
-</div>
-
-
-
-<footer>
-    <p>© 2024 Natalia Madrid - All rights reserved </p>
-</footer>
-
-   
-
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
-
-
-
-
-

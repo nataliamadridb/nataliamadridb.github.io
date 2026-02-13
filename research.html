@@ -1,109 +1,158 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natalia Madrid | Personal Website</title>
-    
-    <!-- Import Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <meta name="description" content="Research by Natalia Madrid Becerra, Ph.D. student in Economics at UCSD.">
+    <title>Research | Natalia Madrid Becerra</title>
 
-    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <header>
-        <div class="menu-container">
-            <div class="menu">
-                <div class="name">
-                    <h2>Natalia Madrid Becerra</h2>
-                </div>
-                <div class="links">
-                    <a href="index.html">Home</a>
-                    <a href="pdfs/CV_Natalia_Madrid_2025.pdf" target="_blank">CV</a>
-                    <a href="research.html">Research</a>
-                    <a href="teaching.html">Teaching</a>
-                </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Natalia Madrid Becerra</h1>
             </div>
+
+            <nav class="main-nav">
+                <div class="lang-switch">
+                    <button id="btn-en" class="lang-option active">EN</button>
+                    <span class="separator">/</span>
+                    <button id="btn-es" class="lang-option">ES</button>
+
+                    <span class="separator" style="margin: 0 10px;">|</span>
+                    <i class="fa-solid fa-circle-half-stroke" id="theme-toggle" title="Toggle Theme"
+                        aria-label="Change color theme" style="cursor: pointer;"></i>
+                </div>
+
+                <ul>
+                    <li><a href="index.html" class="lang-text" data-en="Home" data-es="Inicio">Home</a></li>
+                    <li><a href="assets/pdfs/CV_Natalia_Madrid_2025.pdf" target="_blank">CV</a></li>
+                    <li><a href="research.html" class="active lang-text" data-en="Research"
+                            data-es="Investigación">Research</a></li>
+                    <li><a href="teaching.html" class="lang-text" data-en="Teaching" data-es="Docencia">Teaching</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <aside>
-            <img src="images/nmb.jpg" alt="Foto de Perfil" class="profile-pic">
-            <br>
-            <h3>Natalia Madrid Becerra</h3>
-            <p>Ph.D. student in Economics</p>
-            <p>University of California San Diego</p>
-            <p><a href="mailto:namadrid@ucsd.edu">namadrid@ucsd.edu</a></p>
-            <p><a href="pdfs/CV_Natalia_Madrid_2025.pdf" class="download-link" target="_blank">Download Curriculum Vitae</a></p>
+    <div class="main-container">
 
-            <br><br>
-            <div class="social-links">
-                <a href="mailto:namadrid@ucsd.edu"><i class="fas fa-envelope"></i></a>
-                <a href="https://twitter.com/nataliamadridb" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/natalia-madrid-becerra-886741bb/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/natmadridb" target="_blank"><i class="fab fa-github"></i></a>
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <img src="assets/images/nmb.jpg" alt="Natalia Madrid Becerra" class="profile-pic">
+                <h3>Natalia Madrid Becerra</h3>
+
+                <p class="role lang-text" data-en="Ph.D. student in Economics"
+                    data-es="Estudiante de Doctorado en Economía">Ph.D. student in Economics</p>
+                <p class="uni lang-text" data-en="University of California San Diego"
+                    data-es="Universidad de California San Diego">University of California San Diego</p>
+
+                <div class="contact-links">
+                    <a href="mailto:namadrid@ucsd.edu" class="email-link">namadrid@ucsd.edu</a>
+                    <a href="assets/pdfs/CV_Natalia_Madrid_2025.pdf" class="btn-download" target="_blank">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="lang-text" data-en="Download CV" data-es="Descargar CV">Download CV</span>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="mailto:namadrid@ucsd.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://twitter.com/nataliamadridb" target="_blank" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/natalia-madrid-becerra-886741bb/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/nataliamadridb" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
             </div>
         </aside>
 
-        <main id="research">
-            <h2 class="title__size">Research</h2>
+        <main class="content-area">
 
             <section class="working-projects">
-  <h3>Work in Progress</h3>
+                <h2 class="section-title lang-text" data-en="Work in Progress" data-es="Trabajo en Progreso">Work in
+                    Progress</h2>
 
-<details>
-  <summary><strong>Pricing and Transmission of Climate Risk in Corporate Lending</strong> (with Max Yang)</summary>
-  <p>
-    Local disasters are geographically concentrated shocks, yet credit markets are nationally and globally integrated, raising the question of whether disaster risk remains local or propagates through financial intermediaries. This paper studies how major U.S. hurricanes transmit risk through lender balance sheets to affect credit pricing and allocation beyond directly affected areas. Using syndicated loan data and a difference-in-differences design that compares unaffected borrowers with high versus low ex ante hurricane exposure before and after disasters—excluding directly damaged counties—we isolate changes in perceived risk rather than realized destruction. We find that loan spreads increase significantly for climate-exposed borrowers following disasters, alongside reductions in loan size and syndicate participation. These effects emerge immediately after events and dissipate over time, consistent with a repricing of near-term risk rather than permanent credit rationing. The response is concentrated among financial firms and among lenders with greater geographic exposure to disaster-prone regions, while non-bank lenders partially offset the contraction in bank credit. Our findings show that local climate disasters generate an economy-wide financial shock by aggregating risk on intermediary balance sheets, reshaping credit conditions well beyond the disaster zone.
-  </p>
-</details>
+                <details class="project-card">
+                    <summary>
+                        <div class="summary-title">
+                            <strong class="lang-text"
+                                data-en="Pricing and Transmission of Climate Risk in Corporate Lending"
+                                data-es="Fijación de Precios y Transmisión del Riesgo Climático en Préstamos Corporativos">
+                                Pricing and Transmission of Climate Risk in Corporate Lending
+                            </strong>
+                            <span class="coauthor">(with Max Yang)</span>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </summary>
+                    <div class="project-content">
+                        <p class="lang-text"
+                            data-en="Local disasters are geographically concentrated shocks, yet credit markets are nationally and globally integrated, raising the question of whether disaster risk remains local or propagates through financial intermediaries. This paper studies how major U.S. hurricanes transmit risk through lender balance sheets to affect credit pricing and allocation beyond directly affected areas."
+                            data-es="Los desastres locales son shocks geográficamente concentrados, sin embargo, los mercados crediticios están integrados nacional y globalmente, lo que plantea la duda de si el riesgo de desastre permanece local o se propaga a través de intermediarios financieros. Este artículo estudia cómo los grandes huracanes en EE.UU. transmiten riesgo a través de los balances de los prestamistas para afectar la fijación de precios y la asignación de crédito más allá de las áreas directamente afectadas.">
+                            Local disasters are geographically concentrated shocks...
+                        </p>
+                    </div>
+                </details>
 
+                <details class="project-card">
+                    <summary>
+                        <div class="summary-title">
+                            <strong class="lang-text" data-en="How Climate Risk Shapes Firm's Investment Behavior"
+                                data-es="Cómo el Riesgo Climático Moldea la Inversión Empresarial">
+                                How Climate Risk Shapes Firm's Investment Behavior
+                            </strong>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </summary>
+                    <div class="project-content">
+                        <p class="lang-text"
+                            data-en="I analyze how firm-level exposure to physical climate risks (e.g., wildfires, floods, extreme heat) affects responsiveness to monetary policy shocks. Using firm-level data merged with climate risk scores, I show that climate-exposed firms invest less after expansionary monetary shocks, highlighting climate risk as a novel financial friction."
+                            data-es="Analizo cómo la exposición a nivel de empresa a riesgos climáticos físicos (ej. incendios forestales, inundaciones, calor extremo) afecta la respuesta a shocks de política monetaria. Utilizando datos a nivel de empresa fusionados con puntajes de riesgo climático, muestro que las empresas expuestas al clima invierten menos después de shocks monetarios expansivos, destacando el riesgo climático como una nueva fricción financiera.">
+                            I analyze how firm-level exposure to physical climate risks (e.g., wildfires, floods,
+                            extreme heat) affects responsiveness to monetary policy shocks...
+                        </p>
+                    </div>
+                </details>
 
-  <details>
-    <summary><strong>How Climate Risk Shapes Firm's Investment Behavior</strong></summary>
-    <p>
-      I analyze how firm-level exposure to physical climate risks (e.g., wildfires, floods, extreme heat)
-      affects responsiveness to monetary policy shocks. Using firm-level data merged with climate risk scores,
-      I show that climate-exposed firms invest less after expansionary monetary shocks, highlighting climate
-      risk as a novel financial friction.
-    </p>
-  </details>
+                <details class="project-card">
+                    <summary>
+                        <div class="summary-title">
+                            <strong class="lang-text" data-en="Clean Energy, Trade, and Specialization"
+                                data-es="Energía Limpia, Comercio y Especialización">
+                                Clean Energy, Trade, and Specialization
+                            </strong>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </summary>
+                    <div class="project-content">
+                        <p class="lang-text"
+                            data-en="In this theoretical project, I extend the Krugman (1980) model to two sectors—renewables and fossil fuels—and study how the rise of clean energy reshapes global trade patterns. The model shows how differences in preferences, productivity, and entry costs can lead to asymmetric specialization across countries during the green transition."
+                            data-es="En este proyecto teórico, extiendo el modelo de Krugman (1980) a dos sectores —renovables y combustibles fósiles— y estudio cómo el auge de la energía limpia remodela los patrones de comercio global. El modelo muestra cómo las diferencias en preferencias, productividad y costos de entrada pueden llevar a una especialización asimétrica entre países durante la transición verde.">
+                            In this theoretical project, I extend the Krugman (1980) model to two sectors...
+                        </p>
+                    </div>
+                </details>
 
-  <details>
-    <summary><strong>Clean Energy, Trade, and Specialization</strong></summary>
-    <p>
-      In this theoretical project, I extend the Krugman (1980) model to two sectors—renewables and fossil fuels—
-      and study how the rise of clean energy reshapes global trade patterns. The model shows how differences in
-      preferences, productivity, and entry costs can lead to asymmetric specialization across countries during
-      the green transition.
-    </p>
-  </details>
-</section>
+            </section>
 
-
-            
         </main>
     </div>
 
     <footer>
-        <p>© 2024 Natalia Madrid - All rights reserved</p>
+        <p class="lang-text" data-en="&copy; 2026 Natalia Madrid. All rights reserved."
+            data-es="&copy; 2026 Natalia Madrid. Todos los derechos reservados.">&copy; 2026 Natalia Madrid. All rights
+            reserved.</p>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-

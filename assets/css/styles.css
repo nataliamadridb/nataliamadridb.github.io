@@ -1,0 +1,704 @@
+/* --- 1. VARIABLES & RESET (SISTEMA DE TEMAS) --- */
+:root {
+    /* --- MODO CLARO (Por defecto) --- */
+    --primary-color: #3498db;
+    /* Azul principal */
+    --text-color: #333333;
+    /* Texto principal oscuro */
+    --text-light: #666666;
+    /* Texto secundario gris */
+    --bg-color: #f9f9f9;
+    /* Fondo general */
+    --card-bg: #ffffff;
+    /* Fondo de tarjetas (Blanco) */
+    --summary-bg: #fafafa;
+    /* Fondo del encabezado del acordeón */
+    --border-color: #e0e0e0;
+    /* Bordes suaves */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    --font-main: 'Roboto', sans-serif;
+    --max-width: 1200px;
+    --header-height: 70px;
+}
+
+/* --- MODO OSCURO (Se activa con JS) --- */
+body.dark-mode {
+    --primary-color: #5dade2;
+    /* Azul más brillante para fondo oscuro */
+    --text-color: #e0e0e0;
+    /* Texto principal claro */
+    --text-light: #aaaaaa;
+    /* Texto secundario gris claro */
+    --bg-color: #121212;
+    /* Fondo general muy oscuro */
+    --card-bg: #1e1e1e;
+    /* Fondo de tarjetas gris oscuro */
+    --summary-bg: #2a2a2a;
+    /* Fondo del encabezado del acordeón oscuro */
+    --border-color: #333333;
+    /* Bordes oscuros */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Transición suave al cambiar de tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+.site-header {
+    background-color: var(--card-bg);
+    /* Usa variable para dark mode */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    /* Se adapta al tema */
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Selector de Idioma y Tema */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-family: var(--font-main);
+}
+
+.lang-option {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 400;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    font-family: inherit;
+}
+
+.lang-option.active {
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+    pointer-events: none;
+}
+
+.lang-option:hover {
+    color: var(--primary-color);
+}
+
+.separator {
+    color: var(--border-color);
+    font-weight: 300;
+}
+
+/* Icono del Tema (Sol/Luna) */
+#theme-toggle {
+    color: var(--text-light);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    color: var(--primary-color);
+    transform: rotate(15deg);
+}
+
+/* Links del menú */
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color);
+}
+
+/* --- 3. LAYOUT PRINCIPAL --- */
+.main-container {
+    display: flex;
+    gap: 40px;
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+}
+
+/* --- 4. SIDEBAR (PERFIL) --- */
+.profile-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.profile-card {
+    background: var(--card-bg);
+    /* Variable */
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: sticky;
+    top: 90px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--bg-color);
+    /* Borde dinámico */
+}
+
+.profile-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.profile-card .role {
+    font-weight: 500;
+    margin-bottom: 2px;
+    color: var(--text-color);
+}
+
+.profile-card .uni {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.email-link {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.btn-download {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 5. CONTENIDO PRINCIPAL --- */
+.content-area {
+    flex-grow: 1;
+    background: var(--card-bg);
+    /* Variable */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    /* Usar variable para que la línea se vea en dark mode */
+    padding-bottom: 10px;
+    color: var(--text-color);
+}
+
+.section-title.small-title {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    border-bottom: none;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-section p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+/* --- 6. HERO SECTION (HOME) --- */
+.hero-intro {
+    margin-bottom: 50px;
+    max-width: 850px;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.hero-title .highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 95%;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin-top: 30px;
+    border-radius: 2px;
+}
+
+/* --- 7. INFO GRID (EDUCATION ONLY) --- */
+.info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    flex: 1;
+}
+
+.education-card {
+    flex-basis: 100%;
+    /* Ocupa todo el ancho */
+}
+
+.education-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.icon-bullet {
+    color: var(--primary-color);
+    margin-right: 12px;
+    margin-top: 5px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.edu-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.uni-name {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.edu-links {
+    font-size: 0.85rem;
+    margin-top: 4px;
+    color: var(--text-light);
+}
+
+.edu-links a {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.edu-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 8. TEACHING CARDS --- */
+.teaching-card {
+    display: flex;
+    gap: 20px;
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.teaching-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.teaching-logo {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    /* Logos suelen necesitar fondo blanco para verse bien */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border: 1px solid #eee;
+}
+
+.teaching-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.teaching-details {
+    flex-grow: 1;
+}
+
+.teaching-details h3 {
+    margin-bottom: 2px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.teaching-details .institution {
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.teaching-details .duration {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.doc-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.course-list {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.course-label {
+    font-weight: 700;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.course-list ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.course-list li {
+    margin-bottom: 5px;
+}
+
+/* --- 9. RESEARCH ACCORDIONS --- */
+.research-questions li {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    color: var(--text-color);
+}
+
+.research-questions i {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    margin-top: 4px;
+    color: var(--primary-color);
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card[open] {
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.project-card summary {
+    padding: 20px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--summary-bg);
+    /* Variable ajustada para dark mode */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card[open] summary {
+    border-bottom: 1px solid var(--border-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.project-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-card summary strong {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.project-card[open] summary strong {
+    color: var(--primary-color);
+}
+
+.coauthor {
+    font-weight: 400;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-left: 8px;
+}
+
+.toggle-icon {
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.project-card[open] .toggle-icon {
+    transform: rotate(180deg);
+    color: var(--primary-color);
+}
+
+.project-content {
+    padding: 25px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    line-height: 1.8;
+    text-align: justify;
+    overflow: visible;
+    /* Fix para que no se corte el texto */
+    height: auto;
+}
+
+/* --- 10. FOOTER --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+/* --- 11. RESPONSIVE DESIGN --- */
+
+/* Tablets (menos de 992px) */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile-sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-grid {
+        flex-direction: column;
+    }
+}
+
+/* Móviles (menos de 600px) */
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    .brand {
+        margin-bottom: 5px;
+    }
+
+    /* Navegación móvil */
+    .main-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .lang-switch {
+        width: auto;
+        border-right: 1px solid var(--border-color);
+        margin-right: 10px;
+        padding-right: 10px;
+        margin-bottom: 5px;
+    }
+
+    .main-nav ul {
+        gap: 12px;
+        font-size: 0.85rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content-area {
+        padding: 25px;
+    }
+
+    /* Research Card en móvil */
+    .project-card summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .summary-title {
+        width: 100%;
+    }
+
+    .toggle-icon {
+        align-self: flex-end;
+        margin-top: -20px;
+        /* Ajuste visual */
+    }
+
+    .coauthor {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    /* Teaching Card en móvil */
+    .teaching-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .teaching-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
