@@ -275,7 +275,7 @@ ul {
     /* Texto justificado para look académico */
 }
 
-/* --- 6. GRID DE INFORMACIÓN (Research & Education) --- */
+/* --- 6. GRID DE INFORMACIÓN (Solo Education ahora) --- */
 .info-grid {
     display: flex;
     flex-wrap: wrap;
@@ -287,26 +287,19 @@ ul {
     flex: 1;
 }
 
-.research-card {
-    flex-basis: 35%;
-    /* Columna izquierda más angosta */
-}
-
 .education-card {
-    flex-basis: 55%;
-    /* Columna derecha más ancha */
+    flex-basis: 100%;
+    /* AHORA OCUPA TODO EL ANCHO */
 }
 
-/* Listas con iconos alineados */
-.icon-list li,
+/* Listas con iconos alineados (Limpiado: solo queda education) */
 .education-list li {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
 }
 
-/* Iconos (Focos y Birretes) */
-.icon-list i,
+/* Iconos (Limpiado: solo queda el birrete/bullet) */
 .icon-bullet {
     color: var(--primary-color);
     margin-right: 12px;
@@ -444,24 +437,9 @@ footer {
     }
 }
 
-/* --- ESTILOS PARA LA PÁGINA DE RESEARCH (CORREGIDO) --- */
 
-/* Lista de Preguntas */
-.research-questions li {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    display: flex;
-    /* Asegura que el icono y texto se alineen */
-    align-items: flex-start;
-}
 
-.research-questions i {
-    font-size: 1.2rem;
-    margin-right: 15px;
-    margin-top: 4px;
-    /* Ajuste óptico */
-    color: var(--primary-color);
-}
+
 
 /* Acordeones de Proyectos */
 .project-card {
