@@ -1,45 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Identificar si estamos en una página con botones de idioma
+    // --- 1. REFERENCIAS DOM ---
     const btnEn = document.getElementById('btn-en');
     const btnEs = document.getElementById('btn-es');
     const textsToChange = document.querySelectorAll('.lang-text'); 
+    const themeButton = document.getElementById('theme-toggle');
+    const body = document.body;
 
-    // Si no existen los botones (ej. error de carga), detenemos el script para no causar errores
-    if (!btnEn || !btnEs) {
-        console.warn('Botones de idioma no encontrados en esta página.');
-        return;
-    }
-
-    // 2. Función principal de cambio de idioma
+    // --- 2. LÓGICA DE IDIOMA (Tu código existente) ---
     function setLanguage(lang) {
-        // A) Cambiar los textos
         textsToChange.forEach(element => {
             const text = element.getAttribute(`data-${lang}`);
-            if (text) {
-                element.innerHTML = text; // Usamos innerHTML para respetar negritas o iconos
-            }
+            if (text) element.innerHTML = text;
         });
 
-        // B) Cambiar visualmente los botones (Negrita vs Gris)
         if (lang === 'en') {
-            btnEn.classList.add('active');
-            btnEs.classList.remove('active');
+            if(btnEn) btnEn.classList.add('active');
+            if(btnEs) btnEs.classList.remove('active');
         } else {
-            btnEs.classList.add('active');
-            btnEn.classList.remove('active');
+            if(btnEs) btnEs.classList.add('active');
+            if(btnEn) btnEn.classList.remove('active');
         }
-
-        // C) Guardar preferencia y avisar al navegador
+        
         localStorage.setItem('lang', lang);
         document.documentElement.lang = lang;
     }
 
-    // 3. Inicializar (recuperar memoria o usar inglés por defecto)
     const currentLang = localStorage.getItem('lang') || 'en';
-    setLanguage(currentLang);
+    if(btnEn && btnEs) setLanguage(currentLang);
+    if(btnEn) btnEn.addEventListener('click', () => setLanguage('en'));
+    if(btnEs) btnEs.addEventListener('click', () => setLanguage('es'));
 
-    // 4. Activar los clicks
-    btnEn.addEventListener('click', () => setLanguage('en'));
-    btnEs.addEventListener('click', () => setLanguage('es'));
+
+    // --- 3. LÓGICA DE MODO OSCURO (Nuevo) ---
+    
+    // Función para actualizar el icono
+    const updateIcon = (isDark) => {
+        if (isDark) {
+            // Si es oscuro, mostramos un SOL (para volver a claro)
+            themeButton.classList.replace('fa-circle-half-stroke', 'fa-sun');
+        } else {
+            // Si es claro, mostramos la LUNA/MEDIO CÍRCULO (para ir a oscuro)
+            themeButton.classList.replace('fa-sun', 'fa-circle-half-stroke');
+        }
+    };
+
+    // A. Verificar preferencia guardada al cargar
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Si guardó 'dark', lo activamos
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        updateIcon(true);
+    }
+
+    // B. Evento Click
+    if (themeButton) {
+        themeButton.addEventListener('click', () => {
+            // Alternar clase en el body
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+
+            // Actualizar icono
+            updateIcon(isDarkMode);
+
+            // Guardar en memoria
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+    }
 });
