@@ -205,8 +205,8 @@ ul {
 }
 
 .profile-pic {
-    width: 180px;
-    height: 180px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
