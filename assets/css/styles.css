@@ -187,7 +187,7 @@ ul {
 
 /* --- 4. SIDEBAR (PERFIL) --- */
 .profile-sidebar {
-    width: 300px;
+    width: 340px;
     flex-shrink: 0;
 }
 
@@ -205,8 +205,8 @@ ul {
 }
 
 .profile-pic {
-    width: 230px;
-    height: 230px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
