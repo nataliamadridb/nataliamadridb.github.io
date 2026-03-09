@@ -702,3 +702,23 @@ footer {
         height: 50px;
     }
 }
+
+.abstract-box summary{
+    background:#2ea3f2;
+    color:white;
+    padding:6px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:0.9rem;
+    width:fit-content;
+    margin-top:6px;
+}
+
+.abstract-box summary:hover{
+    background:#1d8fd8;
+}
+
+.abstract-box p{
+    margin-top:10px;
+    line-height:1.6;
+}
