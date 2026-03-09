@@ -69,3 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.querySelectorAll(".abstract-toggle").forEach(button => {
+    button.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const abstract = this.parentElement.nextElementSibling;
+
+        if (abstract.style.display === "block") {
+            abstract.style.display = "none";
+        } else {
+            abstract.style.display = "block";
+        }
+
+    });
+});
