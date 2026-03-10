@@ -758,3 +758,7 @@ footer {
 .paper-link:hover {
     text-decoration: underline;
 }
+
+.research-section + .research-section{
+    margin-top:30px;
+}
