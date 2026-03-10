@@ -712,15 +712,18 @@ footer {
     font-size:0.9rem;
     width:fit-content;
     margin-top:6px;
-    list-style: none;
+    list-style:none;
+    border:none;          /* prevents default border in some browsers */
+    outline:none;         /* removes focus outline */
 }
 
-.abstract-box summary::-webkit-details-marker {
-    display: none;
+.abstract-box summary::-webkit-details-marker{
+    display:none;
 }
 
 .abstract-box p{
     margin-top:10px;
+    margin-bottom:0;      /* avoids extra spacing */
     line-height:1.6;
 }
 
