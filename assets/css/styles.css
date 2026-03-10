@@ -718,6 +718,10 @@ footer {
     display:none;
 }
 
+.abstract-box summary:hover{
+    text-decoration:underline;
+}
+
 .abstract-box p{
     margin-top:10px;
     margin-bottom:0;      /* avoids extra spacing */
