@@ -183,6 +183,7 @@ ul {
     padding: 0 20px;
     flex: 1;
     width: 100%;
+    align-items: stretch;   /* ADD THIS */
 }
 
 /* --- 4. SIDEBAR (PERFIL) --- */
