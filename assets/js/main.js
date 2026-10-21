@@ -54,6 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
         updateIcon(true);
     }
 
+    // --- NEWS: SEE MORE / SEE LESS ---
+    const newsToggle = document.getElementById('news-toggle');
+    if (newsToggle) {
+        const newsList = document.querySelector('.news-list');
+        const label = newsToggle.querySelector('.lang-text');
+        newsToggle.addEventListener('click', () => {
+            const expanded = newsList.classList.toggle('expanded');
+            label.setAttribute('data-en', expanded ? 'See less' : 'See more');
+            label.setAttribute('data-es', expanded ? 'Ver menos' : 'Ver más');
+            const lang = localStorage.getItem('lang') || 'en';
+            label.innerHTML = label.getAttribute('data-' + lang);
+        });
+    }
+
     // B. Evento Click
     if (themeButton) {
         themeButton.addEventListener('click', () => {

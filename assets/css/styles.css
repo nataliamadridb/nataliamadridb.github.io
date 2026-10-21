@@ -793,3 +793,30 @@ footer {
     color: var(--primary-color);
     font-size: 0.9em;
 }
+
+/* --- NEWS SEE MORE --- */
+.news-list .news-extra {
+    display: none;
+}
+
+.news-list.expanded .news-extra {
+    display: flex;
+}
+
+.news-toggle {
+    margin-top: 12px;
+    padding: 6px 16px;
+    background: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    color: var(--primary-color);
+    font-family: var(--font-main);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.news-toggle:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
