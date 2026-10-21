@@ -737,6 +737,10 @@ footer {
     margin-bottom: 4px;
 }
 
+.paper-title {
+    font-weight: 400;
+}
+
 .paper-links {
     margin-bottom: 4px;
 }
