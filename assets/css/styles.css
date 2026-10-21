@@ -763,3 +763,33 @@ footer {
 .research-section + .research-section{
     margin-top:30px;
 }
+
+/* --- NEWS SECTION --- */
+.news-section {
+    margin-top: 30px;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.news-list li {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: baseline;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    flex: 0 0 130px;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 0.9em;
+}
