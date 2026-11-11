@@ -18,7 +18,7 @@
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
     --font-main: 'Roboto', sans-serif;
-    --max-width: 1200px;
+    --max-width: 1260px;
     --header-height: 70px;
 }
 
@@ -188,7 +188,7 @@ ul {
 
 /* --- 4. SIDEBAR (PERFIL) --- */
 .profile-sidebar {
-    width: 340px;
+    width: 320px;
     flex-shrink: 0;
 }
 
@@ -794,7 +794,7 @@ footer {
 .news-date {
     flex: 0 0 130px;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--text-color);
     font-size: 0.9em;
 }
 
