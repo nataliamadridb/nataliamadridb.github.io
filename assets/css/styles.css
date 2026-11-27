@@ -824,3 +824,11 @@ footer {
     background-color: var(--primary-color);
     color: #ffffff;
 }
+
+/* Presentations listed under each paper */
+.paper-presentations {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 2px 0 6px 0;
+}
